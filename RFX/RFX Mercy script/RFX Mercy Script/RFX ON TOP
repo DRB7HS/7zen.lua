@@ -2,6 +2,27 @@ if not game:IsLoaded() then
     game.Loaded:Wait()
 end
 
+local StarterGui = game:GetService("StarterGui")
+local SoundService = game:GetService("SoundService")
+
+local Sound = Instance.new("Sound")
+Sound.SoundId = "rbxassetid://3398620867"
+Sound.Volume = 1
+Sound.Parent = SoundService
+Sound:Play()
+
+pcall(function()
+    StarterGui:SetCore("SendNotification", {
+        Title = "T E A M ^ R F X",
+        Text = "TEAM RFX\nScript RFX THE MERCY SCRIPT\nRFX ON TOP",
+        Duration = 5
+    })
+end)
+
+if not game:IsLoaded() then
+    game.Loaded:Wait()
+end
+
 if _G.IsOpened then
     game:GetService("StarterGui"):SetCore("SendNotification", {
         Title = "System RFX",
