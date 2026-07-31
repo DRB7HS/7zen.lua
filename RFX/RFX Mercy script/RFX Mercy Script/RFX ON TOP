@@ -5,6 +5,28 @@ end
 local StarterGui = game:GetService("StarterGui")
 local SoundService = game:GetService("SoundService")
 
+if _G.IsOpened then
+    StarterGui:SetCore("SendNotification", {
+        Title = "System RFX",
+        Text = "تم تفعيل السكربت مسبقاً، أعد الدخول مجدداً",
+        Duration = 5
+    })
+
+    local vu1 = Instance.new("Sound")
+    vu1.SoundId = "rbxassetid://17692186249"
+    vu1.Volume = 10
+    vu1.Parent = workspace
+
+    vu1.Ended:Connect(function()
+        vu1:Destroy()
+    end)
+
+    vu1:Play()
+    return
+end
+
+_G.IsOpened = true
+
 local Sound = Instance.new("Sound")
 Sound.SoundId = "rbxassetid://3398620867"
 Sound.Volume = 1
@@ -18,26 +40,6 @@ pcall(function()
         Duration = 5
     })
 end)
-
-if not game:IsLoaded() then
-    game.Loaded:Wait()
-end
-
-if _G.IsOpened then
-    game:GetService("StarterGui"):SetCore("SendNotification", {
-        Title = "System RFX",
-        Text = "تم تفعيل السكربت مسبقاً، أعد الدخول مجدداً",
-        Duration = 5
-    })
-    local vu1 = Instance.new("Sound", game.Workspace)
-    vu1.SoundId = "rbxassetid://17692186249"
-    vu1.Volume = 10
-    vu1.Ended:Connect(function()
-        vu1:Destroy()
-    end)
-    vu1:Play()
-else
-    _G.IsOpened = true
 
     local TweenService = game:GetService("TweenService")
     local CoreGui = game:GetService("CoreGui")
