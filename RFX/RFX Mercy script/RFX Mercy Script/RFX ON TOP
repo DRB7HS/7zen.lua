@@ -1,10 +1,11 @@
 if not game:IsLoaded() then
     game.Loaded:Wait()
 end
+
 if _G.IsOpened then
     game:GetService("StarterGui"):SetCore("SendNotification", {
         Title = "System RFX",
-        Text = " تم تفعيل السكربت مسبقاً، أعد الدخول مجدداً",
+        Text = "تم تفعيل السكربت مسبقاً، أعد الدخول مجدداً",
         Duration = 5
     })
     local vu1 = Instance.new("Sound", game.Workspace)
@@ -13,176 +14,150 @@ if _G.IsOpened then
     vu1.Ended:Connect(function()
         vu1:Destroy()
     end)
-    local v2 = vu1
-    vu1.Play(v2)
+    vu1:Play()
 else
     _G.IsOpened = true
-    spawn(function()
-        while true do
-            if table.find(loadstring(game:HttpGet("https://raw.githubusercontent.com/DRB7HS/RFX.lua/refs/heads/main/RFX/Blacklist"))(), tostring(game.Players.LocalPlayer.UserId)) then
-                local v3 = game.Players.LocalPlayer
-                local vu4 = Instance.new("ScreenGui", v3:WaitForChild("PlayerGui"))
-                vu4.ResetOnSpawn = false
-                vu4.IgnoreGuiInset = true
-                local v5, v6, v7 = pairs(game.CoreGui:GetDescendants())
-                while true do
-                    local v8, v9 = v5(v6, v7)
-                    if v8 == nil then
-                        break
-                    end
-                    v7 = v8
-                    if v9:IsA("ScreenGui") and (v9 ~= vu4 and v9.Enabled) then
-                        v9.Enabled = false
-                    end
-                end
-                local v10, v11, v12 = pairs(game.Players.LocalPlayer.PlayerGui:GetDescendants())
-                while true do
-                    local v13, v14 = v10(v11, v12)
-                    if v13 == nil then
-                        break
-                    end
-                    v12 = v13
-                    if v14:IsA("ScreenGui") and (v14 ~= vu4 and v14.Enabled) then
-                        v14.Enabled = false
-                    end
-                end
 
-local TweenService = game:GetService("TweenService")
-local CoreGui = game:GetService("CoreGui")
-local Players = game:GetService("Players")
+    local TweenService = game:GetService("TweenService")
+    local CoreGui = game:GetService("CoreGui")
+    local Players = game:GetService("Players")
 
-local ScreenGui = Instance.new("ScreenGui")
-ScreenGui.Name = "RFX_GUI"
-ScreenGui.ResetOnSpawn = false
+    local ScreenGui = Instance.new("ScreenGui")
+    ScreenGui.Name = "RFX_GUI"
+    ScreenGui.ResetOnSpawn = false
 
-if syn and syn.protect_gui then
-    syn.protect_gui(ScreenGui)
-    ScreenGui.Parent = CoreGui
-elseif gethui then
-    ScreenGui.Parent = gethui()
-else
-    ScreenGui.Parent = CoreGui
-end
-
-local function CreateAnimatedStroke(Object)
-    local Stroke = Instance.new("UIStroke")
-    Stroke.Parent = Object
-    Stroke.Color = Color3.fromRGB(255,255,255)
-    Stroke.Thickness = 3
-    Stroke.Transparency = 0
-    Stroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-    Stroke.LineJoinMode = Enum.LineJoinMode.Round
-
-    local Gradient = Instance.new("UIGradient")
-    Gradient.Parent = Stroke
-    Gradient.Rotation = 0
-
-    Gradient.Color = ColorSequence.new{
-        ColorSequenceKeypoint.new(0, Color3.fromRGB(35,0,70)),
-        ColorSequenceKeypoint.new(0.15, Color3.fromRGB(80,0,140)),
-        ColorSequenceKeypoint.new(0.35, Color3.fromRGB(210,120,255)),
-        ColorSequenceKeypoint.new(0.5, Color3.fromRGB(255,170,255)),
-        ColorSequenceKeypoint.new(0.65, Color3.fromRGB(210,120,255)),
-        ColorSequenceKeypoint.new(0.85, Color3.fromRGB(80,0,140)),
-        ColorSequenceKeypoint.new(1, Color3.fromRGB(35,0,70))
-    }
-
-    local AnimationInfo = TweenInfo.new(7, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, -1)
-    local Track = TweenService:Create(Gradient, AnimationInfo, {Rotation = 360})
-    Track:Play()
-end
-
-local IntroFrame = Instance.new("Frame")
-IntroFrame.Name = "IntroFrame"
-IntroFrame.Size = UDim2.new(1, 0, 1, 0)
-IntroFrame.Position = UDim2.new(0, 0, 0, 0)
-IntroFrame.BackgroundColor3 = Color3.fromRGB(10, 5, 15)
-IntroFrame.BackgroundTransparency = 0.2
-IntroFrame.Parent = ScreenGui
-
-local IntroText = Instance.new("TextLabel")
-IntroText.Size = UDim2.new(0, 400, 0, 100)
-IntroText.Position = UDim2.new(0.5, -200, 0.5, -50)
-IntroText.BackgroundTransparency = 1
-IntroText.Text = "RFX"
-IntroText.TextColor3 = Color3.fromRGB(220, 120, 255)
-IntroText.TextSize = 80
-IntroText.Font = Enum.Font.FredokaOne
-IntroText.Parent = IntroFrame
-
-local MainFrame = Instance.new("ImageLabel")
-MainFrame.Name = "MainFrame"
-MainFrame.Size = UDim2.new(0, 500, 0, 320)
-MainFrame.Position = UDim2.new(0, -500, 0, -320)
-MainFrame.Image = "rbxthumb://type=Asset&w=420&h=420&id=77346579573030"
-MainFrame.BackgroundColor3 = Color3.fromRGB(15, 15, 20)
-MainFrame.BorderSizePixel = 0
-MainFrame.ClipsDescendants = true
-MainFrame.Visible = false
-MainFrame.Active = true
-MainFrame.Draggable = true
-MainFrame.Parent = ScreenGui
-
-CreateAnimatedStroke(MainFrame)
-
-local SnowContainer = Instance.new("Frame")
-SnowContainer.Size = UDim2.new(1, 0, 1, 0)
-SnowContainer.BackgroundTransparency = 1
-SnowContainer.ClipsDescendants = true
-SnowContainer.Parent = MainFrame
-
-task.spawn(function()
-    while true do
-        if MainFrame.Visible then
-            local Flake = Instance.new("Frame")
-            local Size = math.random(3, 5)
-            Flake.Size = UDim2.new(0, Size, 0, Size)
-            Flake.Position = UDim2.new(math.random(0, 100) / 100, 0, 0, -10)
-            Flake.BackgroundColor3 = Color3.fromRGB(210, 120, 255)
-            Flake.BorderSizePixel = 0
-            Flake.Parent = SnowContainer
-
-            local FallDuration = math.random(3, 6)
-            local Tween = TweenService:Create(Flake, TweenInfo.new(FallDuration, Enum.EasingStyle.Linear), {
-                Position = UDim2.new(Flake.Position.X.Scale, math.random(-20, 20), 1, 10),
-                BackgroundTransparency = 0.8
-            })
-            Tween:Play()
-            Tween.Completed:Connect(function()
-                Flake:Destroy()
-            end)
-        end
-        task.wait(0.2)
+    if syn and syn.protect_gui then
+        syn.protect_gui(ScreenGui)
+        ScreenGui.Parent = CoreGui
+    elseif gethui then
+        ScreenGui.Parent = gethui()
+    else
+        ScreenGui.Parent = CoreGui
     end
-end)
 
-task.delay(2, function()
-    IntroFrame:Destroy()
-    MainFrame.Visible = true
+    local function CreateAnimatedStroke(Object)
+        local Stroke = Instance.new("UIStroke")
+        Stroke.Parent = Object
+        Stroke.Color = Color3.fromRGB(255,255,255)
+        Stroke.Thickness = 3
+        Stroke.Transparency = 0
+        Stroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+        Stroke.LineJoinMode = Enum.LineJoinMode.Round
 
-   local TargetPosition = UDim2.new(0.5, -250, 0.5, -160)
-   local TweenInfoData = TweenInfo.new(1, Enum.EasingStyle.Quart, Enum.EasingDirection.Out)
-   local MoveTween = TweenService:Create(MainFrame, TweenInfoData, {Position = TargetPosition})
-   MoveTween:Play()
+        local Gradient = Instance.new("UIGradient")
+        Gradient.Parent = Stroke
+        Gradient.Rotation = 0
 
-    local Sound = Instance.new("Sound")
-    Sound.SoundId = getcustomasset and getcustomasset("f90o1t.mp3") or "https://files.catbox.moe/f90o1t.mp3"
-    
-    if not isfile or not isfile("f90o1t.mp3") then
-        if writefile and game.HttpGet then
-            writefile("f90o1t.mp3", game:HttpGet("https://files.catbox.moe/f90o1t.mp3"))
-            if getcustomasset then
+        Gradient.Color = ColorSequence.new{
+            ColorSequenceKeypoint.new(0, Color3.fromRGB(35,0,70)),
+            ColorSequenceKeypoint.new(0.15, Color3.fromRGB(80,0,140)),
+            ColorSequenceKeypoint.new(0.35, Color3.fromRGB(210,120,255)),
+            ColorSequenceKeypoint.new(0.5, Color3.fromRGB(255,170,255)),
+            ColorSequenceKeypoint.new(0.65, Color3.fromRGB(210,120,255)),
+            ColorSequenceKeypoint.new(0.85, Color3.fromRGB(80,0,140)),
+            ColorSequenceKeypoint.new(1, Color3.fromRGB(35,0,70))
+        }
+
+        local AnimationInfo = TweenInfo.new(7, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, -1)
+        local Track = TweenService:Create(Gradient, AnimationInfo, {Rotation = 360})
+        Track:Play()
+    end
+
+    local IntroFrame = Instance.new("Frame")
+    IntroFrame.Name = "IntroFrame"
+    IntroFrame.Size = UDim2.new(1, 0, 1, 0)
+    IntroFrame.Position = UDim2.new(0, 0, 0, 0)
+    IntroFrame.BackgroundColor3 = Color3.fromRGB(10, 5, 15)
+    IntroFrame.BackgroundTransparency = 0.2
+    IntroFrame.Parent = ScreenGui
+
+    local IntroText = Instance.new("TextLabel")
+    IntroText.Size = UDim2.new(0, 400, 0, 100)
+    IntroText.Position = UDim2.new(0.5, -200, 0.5, -50)
+    IntroText.BackgroundTransparency = 1
+    IntroText.Text = "RFX"
+    IntroText.TextColor3 = Color3.fromRGB(220, 120, 255)
+    IntroText.TextSize = 80
+    IntroText.Font = Enum.Font.FredokaOne
+    IntroText.Parent = IntroFrame
+
+    local MainFrame = Instance.new("ImageLabel")
+    MainFrame.Name = "MainFrame"
+    MainFrame.Size = UDim2.new(0, 500, 0, 320)
+    MainFrame.Position = UDim2.new(0, -500, 0, -320)
+    MainFrame.Image = "rbxthumb://type=Asset&w=420&h=420&id=77346579573030"
+    MainFrame.BackgroundColor3 = Color3.fromRGB(15, 15, 20)
+    MainFrame.BorderSizePixel = 0
+    MainFrame.ClipsDescendants = true
+    MainFrame.Visible = false
+    MainFrame.Active = true
+    MainFrame.Draggable = true
+    MainFrame.Parent = ScreenGui
+
+    CreateAnimatedStroke(MainFrame)
+
+    local SnowContainer = Instance.new("Frame")
+    SnowContainer.Size = UDim2.new(1, 0, 1, 0)
+    SnowContainer.BackgroundTransparency = 1
+    SnowContainer.ClipsDescendants = true
+    SnowContainer.Parent = MainFrame
+
+    task.spawn(function()
+        while true do
+            if MainFrame.Visible then
+                local Flake = Instance.new("Frame")
+                local Size = math.random(3, 5)
+                Flake.Size = UDim2.new(0, Size, 0, Size)
+                Flake.Position = UDim2.new(math.random(0, 100) / 100, 0, 0, -10)
+                Flake.BackgroundColor3 = Color3.fromRGB(210, 120, 255)
+                Flake.BorderSizePixel = 0
+                Flake.Parent = SnowContainer
+
+                local FallDuration = math.random(3, 6)
+                local Tween = TweenService:Create(Flake, TweenInfo.new(FallDuration, Enum.EasingStyle.Linear), {
+                    Position = UDim2.new(Flake.Position.X.Scale, math.random(-20, 20), 1, 10),
+                    BackgroundTransparency = 0.8
+                })
+                Tween:Play()
+                Tween.Completed:Connect(function()
+                    Flake:Destroy()
+                end)
+            end
+            task.wait(0.2)
+        end
+    end)
+
+    task.delay(2, function()
+        IntroFrame:Destroy()
+        MainFrame.Visible = true
+
+        local TargetPosition = UDim2.new(0.5, -250, 0.5, -160)
+        local TweenInfoData = TweenInfo.new(1, Enum.EasingStyle.Quart, Enum.EasingDirection.Out)
+        local MoveTween = TweenService:Create(MainFrame, TweenInfoData, {Position = TargetPosition})
+        MoveTween:Play()
+
+        local Sound = Instance.new("Sound")
+        
+        if isfile and writefile and getcustomasset then
+            if not isfile("f90o1t.mp3") then
+                pcall(function()
+                    writefile("f90o1t.mp3", game:HttpGet("https://files.catbox.moe/f90o1t.mp3"))
+                end)
+            end
+            if isfile("f90o1t.mp3") then
                 Sound.SoundId = getcustomasset("f90o1t.mp3")
             end
+        else
+            Sound.SoundId = "rbxassetid://17692186249"
         end
-    end
 
-    Sound.Volume = 1
-    Sound.Parent = MainFrame
-    Sound:Play()
+        Sound.Volume = 1
+        Sound.Parent = MainFrame
+        Sound:Play()
 
-    task.delay(9, function()
-        Sound:Stop()
-        Sound:Destroy()
+        task.delay(9, function()
+            Sound:Stop()
+            Sound:Destroy()
+        end)
     end)
-end)
+end
