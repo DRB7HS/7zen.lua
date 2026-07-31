@@ -14,7 +14,7 @@ Sound:Play()
 pcall(function()
     StarterGui:SetCore("SendNotification", {
         Title = "T E A M ^ R F X",
-        Text = "TEAM RFX\nScript RFX THE MERCY SCRIPT\nRFX ON TOP",
+        Text = "TEAM RFX\nSCRIPT RFX THE MERCY SCRIPT\nRFX ON TOP",
         Duration = 5
     })
 end)
