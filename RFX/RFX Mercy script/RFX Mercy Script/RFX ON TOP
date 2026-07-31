@@ -86,6 +86,25 @@ end)
         Track:Play()
     end
 
+‏local IntroFrame = Instance.new("Frame")
+‏IntroFrame.Name = "IntroFrame"
+‏IntroFrame.Size = UDim2.new(1, 0, 1, 0)
+‏IntroFrame.Position = UDim2.new(0, 0, 0, 0)
+‏IntroFrame.BackgroundColor3 = Color3.fromRGB(10, 5, 15)
+‏IntroFrame.BackgroundTransparency = 0.2
+‏IntroFrame.Parent = ScreenGui
+
+‏local IntroText = Instance.new("TextLabel")
+‏IntroText.Size = UDim2.new(0, 400, 0, 100)
+‏IntroText.Position = UDim2.new(0.5, -200, 0.5, -50)
+‏IntroText.BackgroundTransparency = 1
+‏IntroText.Text = "RFX"
+‏IntroText.TextColor3 = Color3.fromRGB(220, 120, 255)
+‏IntroText.TextSize = 80
+‏IntroText.Font = Enum.Font.FredokaOne
+‏IntroText.Parent = IntroFrame
+
+
     local MainFrame = Instance.new("ImageLabel")
     MainFrame.Name = "MainFrame"
     MainFrame.Size = UDim2.new(0, 500, 0, 320)
@@ -132,6 +151,8 @@ end)
         end
     end)
 
+        ‏task.delay(2, function()
+‏        IntroFrame:Destroy()
         MainFrame.Visible = true
     
         local TargetPosition = UDim2.new(0.5, -250, 0.5, -160)
@@ -162,3 +183,4 @@ end)
             Sound:Stop()
             Sound:Destroy()
         end)
+    end)
