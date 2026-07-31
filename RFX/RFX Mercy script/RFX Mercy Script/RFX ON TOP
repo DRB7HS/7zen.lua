@@ -51,16 +51,6 @@ IntroFrame.BackgroundColor3 = Color3.fromRGB(10, 5, 15)
 IntroFrame.BackgroundTransparency = 0.2
 IntroFrame.Parent = ScreenGui
 
-for i = 1, 20 do
-    local Line = Instance.new("Frame")
-    Line.Size = UDim2.new(0, math.random(100, 300), 0, math.random(2, 4))
-    Line.Position = UDim2.new(math.random(0, 100) / 100, 0, math.random(0, 100) / 100, 0)
-    Line.BackgroundColor3 = Color3.fromRGB(180, 50, 255)
-    Line.BorderSizePixel = 0
-    Line.Rotation = math.random(-45, 45)
-    Line.Parent = IntroFrame
-end
-
 local IntroText = Instance.new("TextLabel")
 IntroText.Size = UDim2.new(0, 400, 0, 100)
 IntroText.Position = UDim2.new(0.5, -200, 0.5, -50)
