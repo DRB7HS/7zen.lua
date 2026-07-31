@@ -155,7 +155,7 @@ task.spawn(function()
     end
 end)
 
-task.delay(2, function()
+task.delay(3, function()
     IntroFrame:Destroy()
     MainFrame.Visible = true
 
