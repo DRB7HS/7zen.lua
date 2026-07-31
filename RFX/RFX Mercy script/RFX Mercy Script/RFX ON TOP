@@ -29,15 +29,14 @@ end
 
 _G.IsOpened = true
 
-task.wait(3)
-
+task.wait(4)
 local Sound = Instance.new("Sound")
 Sound.SoundId = "rbxassetid://3398620867"
 Sound.Volume = 1
 Sound.Parent = SoundService
 Sound:Play()
 
-task.wait(3)
+task.wait(4)
 pcall(function()
     StarterGui:SetCore("SendNotification", {
         Title = "T E A M * R F X",
@@ -155,7 +154,7 @@ task.spawn(function()
     end
 end)
 
-task.delay(3, function()
+    task.delay(3, function()
     IntroFrame:Destroy()
     MainFrame.Visible = true
 
@@ -183,7 +182,7 @@ task.delay(3, function()
     CustomSound.Parent = MainFrame
     CustomSound:Play()
 
-    task.delay(9, function()
+    task.delay(0, function()
         CustomSound:Stop()
         CustomSound:Destroy()
     end)
