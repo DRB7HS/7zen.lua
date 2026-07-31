@@ -132,10 +132,8 @@ end)
         end
     end)
 
-    task.delay(2, function()
         MainFrame.Visible = true
     
-
         local TargetPosition = UDim2.new(0.5, -250, 0.5, -160)
         local TweenInfoData = TweenInfo.new(1, Enum.EasingStyle.Quart, Enum.EasingDirection.Out)
         local MoveTween = TweenService:Create(MainFrame, TweenInfoData, {Position = TargetPosition})
