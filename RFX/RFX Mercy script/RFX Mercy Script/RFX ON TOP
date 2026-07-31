@@ -29,13 +29,15 @@ end
 
 _G.IsOpened = true
 
+task.wait(3)
+
 local Sound = Instance.new("Sound")
 Sound.SoundId = "rbxassetid://3398620867"
 Sound.Volume = 1
 Sound.Parent = SoundService
 Sound:Play()
 
-task.wait(2)
+task.wait(3)
 pcall(function()
     StarterGui:SetCore("SendNotification", {
         Title = "T E A M * R F X",
