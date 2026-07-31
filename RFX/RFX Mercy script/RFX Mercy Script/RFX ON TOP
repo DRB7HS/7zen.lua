@@ -35,6 +35,7 @@ Sound.Volume = 1
 Sound.Parent = SoundService
 Sound:Play()
 
+task.wait(2)
 pcall(function()
     StarterGui:SetCore("SendNotification", {
         Title = "T E A M * R F X",
