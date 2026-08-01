@@ -32,6 +32,9 @@ _G.IsOpened = true
 local TweenService = game:GetService("TweenService")
 local CoreGui = game:GetService("CoreGui")
 local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local UserInputService = game:GetService("UserInputService")
+local Workspace = game:GetService("Workspace")
 local LocalPlayer = Players.LocalPlayer
 
 local ScreenGui = Instance.new("ScreenGui")
@@ -45,6 +48,11 @@ elseif gethui then
     ScreenGui.Parent = gethui()
 else
     ScreenGui.Parent = CoreGui
+end
+
+local function ApplyTextStroke(TextObject)
+    TextObject.TextStrokeTransparency = 0
+    TextObject.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
 end
 
 local function CreateAnimatedStroke(Object)
@@ -92,6 +100,7 @@ IntroText.TextColor3 = Color3.fromRGB(220, 120, 255)
 IntroText.TextSize = 50
 IntroText.Font = Enum.Font.FredokaOne
 IntroText.Parent = IntroFrame
+ApplyTextStroke(IntroText)
 
 local MainFrame = Instance.new("ImageLabel")
 MainFrame.Name = "MainFrame"
@@ -129,6 +138,7 @@ Text1.TextColor3 = Color3.fromRGB(75, 0, 130)
 Text1.TextSize = 22
 Text1.TextXAlignment = Enum.TextXAlignment.Right
 Text1.TextColor3 = Color3.new(1, 1, 1)
+ApplyTextStroke(Text1)
 
 local Gradient1 = Instance.new("UIGradient")
 Gradient1.Parent = Text1
@@ -159,6 +169,7 @@ Text2.TextColor3 = Color3.fromRGB(75, 0, 130)
 Text2.TextSize = 22
 Text2.TextXAlignment = Enum.TextXAlignment.Right
 Text2.TextColor3 = Color3.new(1, 1, 1)
+ApplyTextStroke(Text2)
 
 local Gradient2 = Instance.new("UIGradient")
 Gradient2.Parent = Text2
@@ -170,9 +181,6 @@ Gradient2.Color = ColorSequence.new{
     ColorSequenceKeypoint.new(0.65, Color3.fromRGB(110, 0, 180)),
     ColorSequenceKeypoint.new(1.00, Color3.fromRGB(40, 0, 70))
 }
-
-Text2.TextStrokeTransparency = 0
-Text2.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
 
 local Text3 = Instance.new("TextLabel")
 Text3.Name = "StatusLabel"
@@ -186,6 +194,7 @@ Text3.TextColor3 = Color3.fromRGB(75, 0, 130)
 Text3.TextSize = 22
 Text3.TextXAlignment = Enum.TextXAlignment.Right
 Text3.TextColor3 = Color3.new(1, 1, 1)
+ApplyTextStroke(Text3)
 
 local Gradient3 = Instance.new("UIGradient")
 Gradient3.Parent = Text3
@@ -197,9 +206,6 @@ Gradient3.Color = ColorSequence.new{
     ColorSequenceKeypoint.new(0.65, Color3.fromRGB(110, 0, 180)),
     ColorSequenceKeypoint.new(1.00, Color3.fromRGB(40, 0, 70))
 }
-
-Text3.TextStrokeTransparency = 0
-Text3.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
 
 local PlayerImage = Instance.new("ImageLabel")
 PlayerImage.Name = "PlayerImage"
@@ -226,7 +232,7 @@ Frame2.Size = UDim2.new(0, 340, 0, 135)
 
 local UIStroke3 = Instance.new("UIStroke")
 UIStroke3.Parent = Frame2
-UIStroke3.Color = Color3.fromRGB(255, 0, 0)
+UIStroke3.Color = Color3.fromRGB(75, 0, 130)
 UIStroke3.Thickness = 1.5
 UIStroke3.Transparency = 0.2
 
@@ -236,7 +242,7 @@ getgenv().Corner1.CornerRadius = UDim.new(0, 10)
 getgenv().Corner1.Parent = Frame2
 local UIStroke4 = Instance.new("UIStroke")
 getgenv().Stroke1 = UIStroke4
-getgenv().Stroke1.Color = Color3.fromRGB(255, 0, 0)
+getgenv().Stroke1.Color = Color3.fromRGB(75, 0, 130)
 getgenv().Stroke1.Thickness = 1.5
 getgenv().Stroke1.Transparency = 0.2
 getgenv().Stroke1.Parent = Frame2
@@ -253,6 +259,8 @@ getgenv().Title1.TextColor3 = Color3.fromRGB(255, 255, 255)
 getgenv().Title1.Font = Enum.Font.GothamBold
 getgenv().Title1.TextSize = 16
 getgenv().Title1.TextXAlignment = Enum.TextXAlignment.Right
+ApplyTextStroke(getgenv().Title1)
+
 local TextLabel7 = Instance.new("TextLabel")
 getgenv().Title2 = TextLabel7
 getgenv().Title2.Name = "Title2"
@@ -265,6 +273,8 @@ getgenv().Title2.TextColor3 = Color3.fromRGB(255, 255, 255)
 getgenv().Title2.Font = Enum.Font.GothamBold
 getgenv().Title2.TextSize = 16
 getgenv().Title2.TextXAlignment = Enum.TextXAlignment.Left
+ApplyTextStroke(getgenv().Title2)
+
 local Frame3 = Instance.new("Frame")
 getgenv().DevsFrame = Frame3
 getgenv().DevsFrame.Parent = Frame2
@@ -289,6 +299,8 @@ getgenv().RightsLabel.TextSize = 9
 getgenv().RightsLabel.Font = Enum.Font.Gotham
 getgenv().RightsLabel.TextColor3 = Color3.fromRGB(150, 150, 150)
 getgenv().RightsLabel.TextXAlignment = Enum.TextXAlignment.Left
+ApplyTextStroke(getgenv().RightsLabel)
+
 local TextLabel9 = Instance.new("TextLabel")
 getgenv().VersionLabel = TextLabel9
 getgenv().VersionLabel.Parent = Frame2
@@ -300,6 +312,8 @@ getgenv().VersionLabel.TextSize = 9
 getgenv().VersionLabel.Font = Enum.Font.Gotham
 getgenv().VersionLabel.TextColor3 = Color3.fromRGB(150, 150, 150)
 getgenv().VersionLabel.TextXAlignment = Enum.TextXAlignment.Right
+ApplyTextStroke(getgenv().VersionLabel)
+
 local Frame5 = Instance.new("Frame")
 Frame5.Name = "RFX 🇸🇦_Holder"
 Frame5.BackgroundTransparency = 1
@@ -313,6 +327,8 @@ TextLabel12.Text = "RFX 🇸🇦"
 TextLabel12.TextSize = 12
 TextLabel12.Font = Enum.Font.Gotham
 TextLabel12.TextColor3 = Color3.fromRGB(220, 220, 220)
+ApplyTextStroke(TextLabel12)
+
 local ImageLabel6 = Instance.new("ImageLabel")
 ImageLabel6.Name = "Developer"
 ImageLabel6.Parent = Frame5
@@ -339,6 +355,8 @@ TextButton88.TextSize = 10
 TextButton88.Font = Enum.Font.Gotham
 TextButton88.TextColor3 = Color3.fromRGB(114, 137, 218)
 TextButton88.AutoButtonColor = false
+ApplyTextStroke(TextButton88)
+
 local TextLabel13 = Instance.new("TextLabel")
 TextLabel13.Parent = Frame5
 TextLabel13.Size = UDim2.new(1, 0, 0, 12)
@@ -349,6 +367,8 @@ TextLabel13.TextSize = 10
 TextLabel13.Font = Enum.Font.Gotham
 TextLabel13.TextColor3 = Color3.fromRGB(180, 180, 180)
 TextLabel13.TextXAlignment = Enum.TextXAlignment.Center
+ApplyTextStroke(TextLabel13)
+
 local conn2 = TextButton88.MouseButton1Click:Connect(function()
     setclipboard("RFX")
     local StarterGui2 = game:GetService("StarterGui")
@@ -365,6 +385,7 @@ local conn2 = TextButton88.MouseButton1Click:Connect(function()
     end)
     Sound2:Play()
 end)
+
 local Frame6 = Instance.new("Frame")
 Frame6.Name = "7zen 🇸🇦_Holder"
 Frame6.BackgroundTransparency = 1
@@ -378,6 +399,8 @@ TextLabel14.Text = "7zen 🇸🇦"
 TextLabel14.TextSize = 12
 TextLabel14.Font = Enum.Font.Gotham
 TextLabel14.TextColor3 = Color3.fromRGB(220, 220, 220)
+ApplyTextStroke(TextLabel14)
+
 local ImageLabel7 = Instance.new("ImageLabel")
 ImageLabel7.Name = "Developer"
 ImageLabel7.Parent = Frame6
@@ -404,6 +427,8 @@ TextButton89.TextSize = 10
 TextButton89.Font = Enum.Font.Gotham
 TextButton89.TextColor3 = Color3.fromRGB(114, 137, 218)
 TextButton89.AutoButtonColor = false
+ApplyTextStroke(TextButton89)
+
 local TextLabel15 = Instance.new("TextLabel")
 TextLabel15.Parent = Frame6
 TextLabel15.Size = UDim2.new(1, 0, 0, 12)
@@ -414,6 +439,8 @@ TextLabel15.TextSize = 10
 TextLabel15.Font = Enum.Font.Gotham
 TextLabel15.TextColor3 = Color3.fromRGB(180, 180, 180)
 TextLabel15.TextXAlignment = Enum.TextXAlignment.Center
+ApplyTextStroke(TextLabel15)
+
 local conn3 = TextButton89.MouseButton1Click:Connect(function()
     setclipboard("7zen")
     local StarterGui3 = game:GetService("StarterGui")
@@ -429,6 +456,487 @@ local conn3 = TextButton89.MouseButton1Click:Connect(function()
         Sound3:Destroy()
     end)
     Sound3:Play()
+end)
+
+local GameFrame = Instance.new("ScrollingFrame")
+GameFrame.Name = "GameFrame"
+GameFrame.Parent = MainFrame
+GameFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+GameFrame.BackgroundTransparency = 1
+GameFrame.Position = UDim2.new(0, 110, 0, 35)
+GameFrame.Size = UDim2.new(0, 380, 0, 275)
+GameFrame.Visible = false
+GameFrame.BorderSizePixel = 0
+GameFrame.ScrollBarThickness = 4
+GameFrame.ScrollBarImageColor3 = Color3.fromRGB(80, 0, 140)
+GameFrame.CanvasSize = UDim2.new(0, 0, 0, 350)
+
+local GameUIListLayout = Instance.new("UIListLayout")
+GameUIListLayout.Parent = GameFrame
+GameUIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+GameUIListLayout.Padding = UDim.new(0, 8)
+
+local CharacterFrame = Instance.new("ScrollingFrame")
+CharacterFrame.Name = "CharacterFrame"
+CharacterFrame.Parent = MainFrame
+CharacterFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+CharacterFrame.BackgroundTransparency = 1
+CharacterFrame.Position = UDim2.new(0, 110, 0, 35)
+CharacterFrame.Size = UDim2.new(0, 380, 0, 275)
+CharacterFrame.Visible = false
+CharacterFrame.BorderSizePixel = 0
+CharacterFrame.ScrollBarThickness = 4
+CharacterFrame.ScrollBarImageColor3 = Color3.fromRGB(80, 0, 140)
+CharacterFrame.CanvasSize = UDim2.new(0, 0, 0, 300)
+
+local CharacterUIListLayout = Instance.new("UIListLayout")
+CharacterUIListLayout.Parent = CharacterFrame
+CharacterUIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+CharacterUIListLayout.Padding = UDim.new(0, 8)
+
+local TargetFrame = Instance.new("Frame")
+TargetFrame.Name = "TargetFrame"
+TargetFrame.Parent = MainFrame
+TargetFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TargetFrame.BackgroundTransparency = 1
+TargetFrame.Position = UDim2.new(0, 110, 0, 35)
+TargetFrame.Size = UDim2.new(0, 380, 0, 275)
+TargetFrame.Visible = false
+
+local v260 = TargetFrame
+local vu31, vu32, vu33 = 150, 60, 220
+local v34, v35, v36 = 255, 255, 255
+
+local vu261 = Instance.new("ImageLabel")
+vu261.Name = "TargetImage"
+vu261.Parent = v260
+vu261.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+vu261.BorderColor3 = Color3.fromRGB(vu31, vu32, vu33)
+vu261.Position = UDim2.new(0, 25, 0, 25)
+vu261.Size = UDim2.new(0, 100, 0, 100)
+vu261.Image = "rbxassetid://10818605405"
+
+local vu263 = Instance.new("TextBox")
+vu263.Name = "TargetName_Input"
+vu263.Parent = v260
+vu263.BackgroundColor3 = Color3.fromRGB(v34, v35, v36)
+vu263.BackgroundTransparency = 0.3
+vu263.BorderColor3 = Color3.fromRGB(vu31, vu32, vu33)
+vu263.Position = UDim2.new(0, 150, 0, 30)
+vu263.Size = UDim2.new(0, 175, 0, 30)
+vu263.Font = Enum.Font.Gotham
+vu263.PlaceholderColor3 = Color3.fromRGB(0, 0, 0)
+vu263.PlaceholderText = "@target..."
+vu263.Text = ""
+vu263.TextColor3 = Color3.fromRGB(20, 20, 20)
+vu263.TextSize = 14
+vu263.TextWrapped = true
+
+local v262 = Instance.new("ImageButton")
+v262.Name = "ClickTargetTool_Button"
+v262.Parent = vu263
+v262.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+v262.BackgroundTransparency = 1
+v262.BorderColor3 = Color3.fromRGB(0, 0, 0)
+v262.BorderSizePixel = 0
+v262.Position = UDim2.new(0, 180, 0, 0)
+v262.Size = UDim2.new(0, 30, 0, 30)
+v262.Image = "rbxassetid://13769558274"
+
+local vu264 = Instance.new("TextLabel")
+vu264.Name = "UserIDTargetLabel"
+vu264.Parent = v260
+vu264.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+vu264.BackgroundTransparency = 1
+vu264.BorderColor3 = Color3.fromRGB(0, 0, 0)
+vu264.BorderSizePixel = 0
+vu264.Position = UDim2.new(0, 150, 0, 70)
+vu264.Size = UDim2.new(0, 300, 0, 75)
+vu264.Font = Enum.Font.Oswald
+vu264.Text = "UserID: \nDisplay: \nJoined: "
+vu264.TextColor3 = Color3.fromRGB(vu31, vu32, vu33)
+vu264.TextSize = 18
+vu264.TextWrapped = true
+vu264.TextXAlignment = Enum.TextXAlignment.Left
+vu264.TextYAlignment = Enum.TextYAlignment.Top
+
+local vu266 = Instance.new("TextButton")
+vu266.Name = "TeleportTarget_Button"
+vu266.Parent = v260
+vu266.BackgroundColor3 = Color3.fromRGB(vu31, vu32, vu33)
+vu266.BackgroundTransparency = 0.5
+vu266.BorderColor3 = Color3.fromRGB(0, 0, 0)
+vu266.BorderSizePixel = 0
+vu266.Position = UDim2.new(0, 25, 0, 200)
+vu266.Size = UDim2.new(0, 150, 0, 30)
+vu266.Font = Enum.Font.Oswald
+vu266.Text = "الانتقال"
+vu266.TextColor3 = Color3.fromRGB(0, 0, 0)
+vu266.TextScaled = true
+vu266.TextSize = 14
+vu266.TextWrapped = true
+
+local vu265 = Instance.new("TextButton")
+vu265.Name = "ViewTarget_Button"
+vu265.Parent = v260
+vu265.BackgroundColor3 = Color3.fromRGB(vu31, vu32, vu33)
+vu265.BackgroundTransparency = 0.5
+vu265.BorderColor3 = Color3.fromRGB(0, 0, 0)
+vu265.BorderSizePixel = 0
+vu265.Position = UDim2.new(0, 210, 0, 150)
+vu265.Size = UDim2.new(0, 150, 0, 30)
+vu265.Font = Enum.Font.Oswald
+vu265.Text = "المشاهدة"
+vu265.TextColor3 = Color3.fromRGB(0, 0, 0)
+vu265.TextScaled = true
+vu265.TextSize = 14
+vu265.TextWrapped = true
+
+local vu267 = Instance.new("TextButton")
+vu267.Name = "FlingTarget_Button"
+vu267.Parent = v260
+vu267.BackgroundColor3 = Color3.fromRGB(vu31, vu32, vu33)
+vu267.BackgroundTransparency = 0.5
+vu267.BorderColor3 = Color3.fromRGB(0, 0, 0)
+vu267.BorderSizePixel = 0
+vu267.Position = UDim2.new(0, 25, 0, 150)
+vu267.Size = UDim2.new(0, 150, 0, 30)
+vu267.Font = Enum.Font.Oswald
+vu267.Text = "فلنق"
+vu267.TextColor3 = Color3.fromRGB(0, 0, 0)
+vu267.TextScaled = true
+vu267.TextSize = 14
+vu267.TextWrapped = true
+
+local SelectedTargetPlayer = nil
+local ViewingTarget = false
+local FlingingTarget = false
+
+local function GetPlayerByShortcut(txt)
+    txt = txt:lower()
+    for _, p in ipairs(Players:GetPlayers()) do
+        if p ~= LocalPlayer then
+            if p.Name:lower():sub(1, #txt) == txt or p.DisplayName:lower():sub(1, #txt) == txt then
+                return p
+            end
+        end
+    end
+    return nil
+end
+
+local function UpdateTargetInfo(p)
+    if p and p ~= LocalPlayer then
+        SelectedTargetPlayer = p
+        vu261.Image = "rbxthumb://type=AvatarHeadShot&id=" .. p.UserId .. "&w=150&h=150"
+        
+        local joinDate = "N/A"
+        pcall(function()
+            local info = game:GetService("UserService"):GetUserInfosByUserIdsAsync({p.UserId})
+            if info and info[1] then
+                joinDate = "Yes"
+            end
+        end)
+        
+        pcall(function()
+            local req = game:HttpGet("https://users.roblox.com/v1/users/" .. p.UserId)
+            local data = game:GetService("HttpService"):JSONDecode(req)
+            if data and data.created then
+                joinDate = data.created:sub(1, 10)
+            end
+        end)
+
+        vu264.Text = "UserID: " .. p.UserId .. "\nDisplay: " .. p.DisplayName .. "\nJoined: " .. joinDate
+    else
+        SelectedTargetPlayer = nil
+        vu263.Text = ""
+        vu261.Image = "rbxassetid://10818605405"
+        vu264.Text = "UserID: \nDisplay: \nJoined: "
+        if ViewingTarget then
+            ViewingTarget = false
+            Workspace.CurrentCamera.CameraSubject = LocalPlayer.Character and LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+            vu265.Text = "المشاهدة"
+        end
+        FlingingTarget = false
+        vu267.Text = "فلنق"
+    end
+end
+
+vu263:GetPropertyChangedSignal("Text"):Connect(function()
+    local txt = vu263.Text
+    if txt == "" then
+        UpdateTargetInfo(nil)
+        return
+    end
+    
+    local found = GetPlayerByShortcut(txt)
+    if found then
+        UpdateTargetInfo(found)
+    else
+        UpdateTargetInfo(nil)
+        vu263.Text = ""
+    end
+end)
+
+vu266.MouseButton1Click:Connect(function()
+    if SelectedTargetPlayer and SelectedTargetPlayer.Character and SelectedTargetPlayer.Character:FindFirstChild("HumanoidRootPart") then
+        local char = LocalPlayer.Character
+        if char and char:FindFirstChild("HumanoidRootPart") then
+            char.HumanoidRootPart.CFrame = SelectedTargetPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, 3)
+        end
+    end
+end)
+
+vu265.MouseButton1Click:Connect(function()
+    if SelectedTargetPlayer and SelectedTargetPlayer.Character and SelectedTargetPlayer.Character:FindFirstChildOfClass("Humanoid") then
+        ViewingTarget = not ViewingTarget
+        if ViewingTarget then
+            Workspace.CurrentCamera.CameraSubject = SelectedTargetPlayer.Character:FindFirstChildOfClass("Humanoid")
+            vu265.Text = "إلغاء المشاهدة"
+        else
+            Workspace.CurrentCamera.CameraSubject = LocalPlayer.Character and LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+            vu265.Text = "المشاهدة"
+        end
+    end
+end)
+
+vu267.MouseButton1Click:Connect(function()
+    if SelectedTargetPlayer then
+        FlingingTarget = not FlingingTarget
+        if FlingingTarget then
+            vu267.Text = "إلغاء الفلنق"
+        else
+            vu267.Text = "فلنق"
+        end
+    end
+end)
+
+local flingToggleState = false
+RunService.Heartbeat:Connect(function()
+    if FlingingTarget and SelectedTargetPlayer and SelectedTargetPlayer.Character and SelectedTargetPlayer.Character:FindFirstChild("HumanoidRootPart") then
+        local myChar = LocalPlayer.Character
+        local myHrp = myChar and myChar:FindFirstChild("HumanoidRootPart")
+        local myHum = myChar and myChar:FindFirstChildOfClass("Humanoid")
+        local targetHrp = SelectedTargetPlayer.Character.HumanoidRootPart
+        
+        if myHrp and myHum then
+            flingToggleState = not flingToggleState
+            local offsetForward = flingToggleState and 0.5 or -0.5
+            
+            myHrp.CFrame = targetHrp.CFrame * CFrame.new(0, -2.5, offsetForward) * CFrame.Angles(math.rad(flingToggleState and 90 or -90), 0, 0)
+            myHrp.Velocity = Vector3.new(99999, 99999, 99999)
+            myHrp.RotVelocity = Vector3.new(99999, 99999, 99999)
+            
+            if myHum:GetState() ~= Enum.HumanoidStateType.Physics then
+                myHum:ChangeState(Enum.HumanoidStateType.Physics)
+            end
+        end
+    end
+end)
+
+Players.PlayerRemoving:Connect(function(p)
+    if SelectedTargetPlayer and p == SelectedTargetPlayer then
+        UpdateTargetInfo(nil)
+    end
+end)
+
+local AntiRagdollEnabled = false
+local InfJumpEnabled = false
+local AntiFlingEnabled = false
+local CurrentSpeed = 16
+local CurrentJump = 50
+
+local function CreateGameButton(text, callback)
+    local Btn = Instance.new("TextButton")
+    Btn.Size = UDim2.new(0, 360, 0, 32)
+    Btn.BackgroundColor3 = Color3.fromRGB(80, 0, 140)
+    Btn.BorderSizePixel = 0
+    Btn.Text = text
+    Btn.TextColor3 = Color3.fromRGB(255, 255, 255)
+    Btn.TextSize = 13
+    Btn.Font = Enum.Font.GothamBold
+    Btn.Parent = GameFrame
+    ApplyTextStroke(Btn)
+    
+    local corner = Instance.new("UICorner")
+    corner.CornerRadius = UDim.new(0, 8)
+    corner.Parent = Btn
+    
+    Btn.MouseButton1Click:Connect(function()
+        callback(Btn)
+    end)
+    return Btn
+end
+
+local function CreateCharacterButton(text, callback)
+    local Btn = Instance.new("TextButton")
+    Btn.Size = UDim2.new(0, 360, 0, 32)
+    Btn.BackgroundColor3 = Color3.fromRGB(80, 0, 140)
+    Btn.BorderSizePixel = 0
+    Btn.Text = text
+    Btn.TextColor3 = Color3.fromRGB(255, 255, 255)
+    Btn.TextSize = 13
+    Btn.Font = Enum.Font.GothamBold
+    Btn.Parent = CharacterFrame
+    ApplyTextStroke(Btn)
+    
+    local corner = Instance.new("UICorner")
+    corner.CornerRadius = UDim.new(0, 8)
+    corner.Parent = Btn
+    
+    Btn.MouseButton1Click:Connect(function()
+        callback(Btn)
+    end)
+    return Btn
+end
+
+local function CreateGameInput(placeholder, callback)
+    local Box = Instance.new("TextBox")
+    Box.Size = UDim2.new(0, 360, 0, 32)
+    Box.BackgroundColor3 = Color3.fromRGB(30, 30, 40)
+    Box.BorderSizePixel = 0
+    Box.PlaceholderText = placeholder
+    Box.PlaceholderColor3 = Color3.fromRGB(150, 150, 150)
+    Box.Text = ""
+    Box.TextColor3 = Color3.fromRGB(255, 255, 255)
+    Box.TextSize = 13
+    Box.Font = Enum.Font.Gotham
+    Box.Parent = GameFrame
+    ApplyTextStroke(Box)
+    
+    local corner = Instance.new("UICorner")
+    corner.CornerRadius = UDim.new(0, 8)
+    corner.Parent = Box
+    
+    Box.FocusLost:Connect(function(enterPressed)
+        if enterPressed then
+            callback(Box.Text)
+        end
+    end)
+    return Box
+end
+
+CreateGameButton("Ragdoll Engine - Anti-Ragdoll: OFF", function(btn)
+    AntiRagdollEnabled = not AntiRagdollEnabled
+    if AntiRagdollEnabled then
+        btn.Text = "Ragdoll Engine - Anti-Ragdoll: ON"
+        btn.BackgroundColor3 = Color3.fromRGB(150, 60, 220)
+    else
+        btn.Text = "Ragdoll Engine - Anti-Ragdoll: OFF"
+        btn.BackgroundColor3 = Color3.fromRGB(80, 0, 140)
+    end
+end)
+
+CreateGameButton("Ragdoll Engine - Force Ragdoll", function()
+    local char = LocalPlayer.Character
+    if char then
+        local hum = char:FindFirstChildOfClass("Humanoid")
+        if hum then
+            hum:ChangeState(Enum.HumanoidStateType.Physics)
+        end
+    end
+end)
+
+CreateGameButton("Ragdoll Engine - Un-Ragdoll / Reset State", function()
+    local char = LocalPlayer.Character
+    if char then
+        local hum = char:FindFirstChildOfClass("Humanoid")
+        if hum then
+            hum:ChangeState(Enum.HumanoidStateType.GettingUp)
+        end
+    end
+end)
+
+CreateGameButton("Ragdoll Engine - Infinite Jump: OFF", function(btn)
+    InfJumpEnabled = not InfJumpEnabled
+    if InfJumpEnabled then
+        btn.Text = "Ragdoll Engine - Infinite Jump: ON"
+        btn.BackgroundColor3 = Color3.fromRGB(150, 60, 220)
+    else
+        btn.Text = "Ragdoll Engine - Infinite Jump: OFF"
+        btn.BackgroundColor3 = Color3.fromRGB(80, 0, 140)
+    end
+end)
+
+CreateGameButton("Ragdoll Engine - Detonate All Mines", function()
+    for _, v in ipairs(Workspace:GetDescendants()) do
+        if v:IsA("BasePart") and (v.Name:lower():find("mine") or v.Name:lower():find("bomb") or v.Name:lower():find("explosive")) then
+            pcall(function()
+                firetouchinterest(LocalPlayer.Character.HumanoidRootPart, v, 0)
+                firetouchinterest(LocalPlayer.Character.HumanoidRootPart, v, 1)
+            end)
+        end
+    end
+end)
+
+CreateCharacterButton("Anti-Fling / Anti-Touch: OFF", function(btn)
+    AntiFlingEnabled = not AntiFlingEnabled
+    if AntiFlingEnabled then
+        btn.Text = "Anti-Fling / Anti-Touch: ON"
+        btn.BackgroundColor3 = Color3.fromRGB(150, 60, 220)
+    else
+        btn.Text = "Anti-Fling / Anti-Touch: OFF"
+        btn.BackgroundColor3 = Color3.fromRGB(80, 0, 140)
+    end
+end)
+
+CreateGameInput("Ragdoll Engine - Set WalkSpeed (Default: 16)", function(val)
+    local num = tonumber(val)
+    if num then
+        CurrentSpeed = num
+        local char = LocalPlayer.Character
+        if char and char:FindFirstChildOfClass("Humanoid") then
+            char:FindFirstChildOfClass("Humanoid").WalkSpeed = num
+        end
+    end
+end)
+
+CreateGameInput("Ragdoll Engine - Set JumpPower (Default: 50)", function(val)
+    local num = tonumber(val)
+    if num then
+        CurrentJump = num
+        local char = LocalPlayer.Character
+        if char and char:FindFirstChildOfClass("Humanoid") then
+            char:FindFirstChildOfClass("Humanoid").JumpPower = num
+        end
+    end
+end)
+
+UserInputService.JumpRequest:Connect(function()
+    if InfJumpEnabled then
+        local char = LocalPlayer.Character
+        if char and char:FindFirstChildOfClass("Humanoid") then
+            char:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Jumping)
+        end
+    end
+end)
+
+RunService.Stepped:Connect(function()
+    local char = LocalPlayer.Character
+    if char then
+        local hum = char:FindFirstChildOfClass("Humanoid")
+        if hum then
+            hum.WalkSpeed = CurrentSpeed
+            if hum.UseJumpPower then
+                hum.JumpPower = CurrentJump
+            end
+            if AntiRagdollEnabled then
+                if hum:GetState() == Enum.HumanoidStateType.Physics or hum:GetState() == Enum.HumanoidStateType.Ragdoll then
+                    hum:ChangeState(Enum.HumanoidStateType.GettingUp)
+                end
+            end
+        end
+        if AntiFlingEnabled then
+            for _, player in ipairs(Players:GetPlayers()) do
+                if player ~= LocalPlayer and player.Character then
+                    for _, part in ipairs(player.Character:GetChildren()) do
+                        if part:IsA("BasePart") then
+                            part.CanCollide = false
+                        end
+                    end
+                end
+            end
+        end
+    end
 end)
 
 local Logo = Instance.new("ImageLabel")
@@ -454,6 +962,7 @@ TextLabel.Size = UDim2.new(1, 0, 0, 30)
 TextLabel.Font = Enum.Font.GothamBold
 TextLabel.Text = "         RFX TEAM: The Mercy Script"
 TextLabel.TextColor3 = Color3.new(1, 1, 1)
+ApplyTextStroke(TextLabel)
 
 local GradientTitle = Instance.new("UIGradient")
 GradientTitle.Parent = TextLabel
@@ -535,6 +1044,7 @@ btn.TextColor3 = Color3.fromRGB(0, 0, 0)
 btn.TextSize = 14
 btn.Font = Enum.Font.GothamBold
 btn.TextWrapped = true
+ApplyTextStroke(btn)
 local corner = Instance.new("UICorner")
 corner.CornerRadius = UDim.new(0, 8)
 corner.Parent = btn
@@ -597,6 +1107,51 @@ task.delay(1, function()
 
     TextButton.MouseButton1Click:Connect(function()
         HomeFrame.Visible = true
+        GameFrame.Visible = false
+        CharacterFrame.Visible = false
+        TargetFrame.Visible = false
+    end)
+
+    TextButton2.MouseButton1Click:Connect(function()
+        HomeFrame.Visible = false
+        GameFrame.Visible = true
+        CharacterFrame.Visible = false
+        TargetFrame.Visible = false
+    end)
+
+    TextButton3.MouseButton1Click:Connect(function()
+        HomeFrame.Visible = false
+        GameFrame.Visible = false
+        CharacterFrame.Visible = true
+        TargetFrame.Visible = false
+    end)
+
+    TextButton4.MouseButton1Click:Connect(function()
+        HomeFrame.Visible = false
+        GameFrame.Visible = false
+        CharacterFrame.Visible = false
+        TargetFrame.Visible = true
+    end)
+
+    TextButton5.MouseButton1Click:Connect(function()
+        HomeFrame.Visible = false
+        GameFrame.Visible = false
+        CharacterFrame.Visible = false
+        TargetFrame.Visible = false
+    end)
+
+    TextButton6.MouseButton1Click:Connect(function()
+        HomeFrame.Visible = false
+        GameFrame.Visible = false
+        CharacterFrame.Visible = false
+        TargetFrame.Visible = false
+    end)
+
+    TextButton7.MouseButton1Click:Connect(function()
+        HomeFrame.Visible = false
+        GameFrame.Visible = false
+        CharacterFrame.Visible = false
+        TargetFrame.Visible = false
     end)
 
     local TargetPosition = UDim2.new(0.5, -250, 0.5, -160)
