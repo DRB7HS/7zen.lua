@@ -115,7 +115,7 @@ HomeFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 HomeFrame.BackgroundTransparency = 1
 HomeFrame.Position = UDim2.new(0, 110, 0, 35)
 HomeFrame.Size = UDim2.new(0, 380, 0, 305)
-HomeFrame.Visible = ture
+HomeFrame.Visible = true
 
 local Text1 = Instance.new("TextLabel")
 Text1.Name = "WelcomeLabel"
