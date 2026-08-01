@@ -270,7 +270,7 @@ pcall(function()
     })
 end)
 
-    MainFrame.Visible = true
+    MainFrame.Visible = false
 
     local TargetPosition = UDim2.new(0.5, -250, 0.5, -160)
     local TweenInfoData = TweenInfo.new(1, Enum.EasingStyle.Quart, Enum.EasingDirection.Out)
