@@ -108,6 +108,64 @@ MainFrame.Parent = ScreenGui
 
 CreateAnimatedStroke(MainFrame)
 
+local HomeFrame = Instance.new("Frame")
+HomeFrame.Name = "HomeFrame"
+HomeFrame.Parent = MainFrame
+HomeFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+HomeFrame.BackgroundTransparency = 1
+HomeFrame.Position = UDim2.new(0, 110, 0, 35)
+HomeFrame.Size = UDim2.new(0, 380, 0, 305)
+HomeFrame.Visible = ture
+
+local Text1 = Instance.new("TextLabel")
+Text1.Name = "WelcomeLabel"
+Text1.Parent = HomeFrame
+Text1.BackgroundTransparency = 1
+Text1.Position = UDim2.new(0, 20, 0, 20)
+Text1.Size = UDim2.new(0, 340, 0, 35)
+Text1.Font = Enum.Font.GothamBold
+Text1.Text = "منور السكربت يا " .. LocalPlayer.DisplayName
+Text1.TextColor3 = Color3.fromRGB(255, 0, 0)
+Text1.TextSize = 22
+Text1.TextXAlignment = Enum.TextXAlignment.Right
+
+local Text2 = Instance.new("TextLabel")
+Text2.Name = "HideLabel"
+Text2.Parent = HomeFrame
+Text2.BackgroundTransparency = 1
+Text2.Position = UDim2.new(0, 20, 0, 60)
+Text2.Size = UDim2.new(0, 340, 0, 35)
+Text2.Font = Enum.Font.GothamBold
+Text2.Text = "اضغط [F] لأخفاء الواجهة"
+Text2.TextColor3 = Color3.fromRGB(255, 0, 0)
+Text2.TextSize = 22
+Text2.TextXAlignment = Enum.TextXAlignment.Right
+
+local Text3 = Instance.new("TextLabel")
+Text3.Name = "StatusLabel"
+Text3.Parent = HomeFrame
+Text3.BackgroundTransparency = 1
+Text3.Position = UDim2.new(0, 20, 0, 100)
+Text3.Size = UDim2.new(0, 340, 0, 35)
+Text3.Font = Enum.Font.GothamBold
+Text3.Text = "حالة السكربت : شغال"
+Text3.TextColor3 = Color3.fromRGB(255, 0, 0)
+Text3.TextSize = 22
+Text3.TextXAlignment = Enum.TextXAlignment.Right
+
+local PlayerImage = Instance.new("ImageLabel")
+PlayerImage.Name = "PlayerImage"
+PlayerImage.Parent = HomeFrame
+PlayerImage.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+PlayerImage.Position = UDim2.new(0, 20, 0, 20)
+PlayerImage.Size = UDim2.new(0, 110, 0, 110)
+local userId = LocalPlayer.UserId
+PlayerImage.Image = "rbxthumb://type=AvatarHeadShot&id=" .. userId .. "&w=150&h=150"
+
+local ImageCorner = Instance.new("UICorner")
+ImageCorner.CornerRadius = UDim.new(0, 12)
+ImageCorner.Parent = PlayerImage
+
 local Logo = Instance.new("ImageLabel")
 Logo.Name = "Logo"
 Logo.Parent = MainFrame
