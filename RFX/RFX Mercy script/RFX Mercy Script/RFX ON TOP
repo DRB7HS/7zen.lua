@@ -107,8 +107,12 @@ MainFrame.Parent = ScreenGui
 
 CreateAnimatedStroke(MainFrame)
 
+local TextLabel = Instance.new("TextLabel")
+local Frame = Instance.new("Frame")
+local StopDrag = Instance.new("ImageButton")
+
 TextLabel.Name = "TitleBarLabel"
-TextLabel.Parent = ImageLabel
+TextLabel.Parent = MainFrame
 TextLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 TextLabel.BackgroundTransparency = 0.25
 TextLabel.Size = UDim2.new(1, 0, 0, 30)
@@ -136,15 +140,15 @@ TweenService:Create(
 TextLabel.TextColor3 = Color3.fromRGB(255, 0, 0)
 TextLabel.TextScaled = true
 TextLabel.TextXAlignment = Enum.TextXAlignment.Left
-getgenv().StopDrag.Name = "StopDrag"
-getgenv().StopDrag.Parent = ImageLabel
-getgenv().StopDrag.BackgroundTransparency = 1
-getgenv().StopDrag.Size = UDim2.new(0.05, 0, 0, 20)
-getgenv().StopDrag.Position = UDim2.new(0.943, 0, 0, 5)
-getgenv().StopDrag.Image = "rbxassetid://15117261700"
-getgenv().StopDrag.ImageColor3 = Color3.fromRGB(139, 0, 0)
+StopDrag.Name = "StopDrag"
+StopDrag.Parent = MainFrame
+StopDrag.BackgroundTransparency = 1
+StopDrag.Size = UDim2.new(0.05, 0, 0, 20)
+StopDrag.Position = UDim2.new(0.943, 0, 0, 5)
+StopDrag.Image = "rbxassetid://15117261700"
+StopDrag.ImageColor3 = Color3.fromRGB(139, 0, 0)
 Frame.Name = "SectionList"
-Frame.Parent = ImageLabel
+Frame.Parent = MainFrame
 Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 Frame.BackgroundTransparency = 0.5
 Frame.Position = UDim2.new(0, 0, 0, 30)
