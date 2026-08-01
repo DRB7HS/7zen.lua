@@ -112,8 +112,8 @@ Logo.Name = "Logo"
 Logo.Parent = MainFrame
 Logo.BackgroundTransparency = 1
 Logo.Image = "rbxthumb://type=Asset&w=420&h=420&id=122099692016968"
-Logo.Size = UDim2.new(0, 75, 0, 75)
-Logo.Position = UDim2.new(0, -2, 0, -2)
+Logo.Size = UDim2.new(0, 103, 0, 103)
+Logo.Position = UDim2.new(0, -40, 0, -40)
 Logo.Rotation = -15
 Logo.ScaleType = Enum.ScaleType.Fit
 Logo.ZIndex = 10
@@ -128,7 +128,7 @@ TextLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 TextLabel.BackgroundTransparency = 0.25
 TextLabel.Size = UDim2.new(1, 0, 0, 30)
 TextLabel.Font = Enum.Font.GothamBold
-TextLabel.Text = "        RFX TEAM: The Mercy Script"
+TextLabel.Text = "         RFX TEAM: The Mercy Script"
 TextLabel.TextColor3 = Color3.new(1, 1, 1)
 
 local Gradient = Instance.new("UIGradient")
