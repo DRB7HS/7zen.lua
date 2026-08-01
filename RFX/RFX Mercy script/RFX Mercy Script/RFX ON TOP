@@ -107,6 +107,17 @@ MainFrame.Parent = ScreenGui
 
 CreateAnimatedStroke(MainFrame)
 
+local Logo = Instance.new("ImageLabel")
+Logo.Name = "Logo"
+Logo.Parent = MainFrame
+Logo.BackgroundTransparency = 1
+Logo.Image = "rbxthumb://type=Asset&w=420&h=420&id=122099692016968"
+Logo.Size = UDim2.new(0, 75, 0, 75)
+Logo.Position = UDim2.new(0, -2, 0, -2)
+Logo.Rotation = -15
+Logo.ScaleType = Enum.ScaleType.Fit
+Logo.ZIndex = 10
+
 local TextLabel = Instance.new("TextLabel")
 local Frame = Instance.new("Frame")
 local StopDrag = Instance.new("ImageButton")
