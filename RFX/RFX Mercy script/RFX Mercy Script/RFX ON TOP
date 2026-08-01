@@ -8,7 +8,7 @@ local SoundService = game:GetService("SoundService")
 if _G.IsOpened then
     pcall(function()
         StarterGui:SetCore("SendNotification", {
-            Title = "System RFX",
+            Title = "System 7ZEN",
             Text = "تم تفعيل السكربت مسبقاً، أعد الدخول مجدداً",
             Duration = 5
         })
@@ -313,78 +313,6 @@ getgenv().VersionLabel.Font = Enum.Font.Gotham
 getgenv().VersionLabel.TextColor3 = Color3.fromRGB(150, 150, 150)
 getgenv().VersionLabel.TextXAlignment = Enum.TextXAlignment.Right
 ApplyTextStroke(getgenv().VersionLabel)
-
-local Frame5 = Instance.new("Frame")
-Frame5.Name = "RFX 🇸🇦_Holder"
-Frame5.BackgroundTransparency = 1
-Frame5.Parent = getgenv().DevsFrame
-local TextLabel12 = Instance.new("TextLabel")
-TextLabel12.Parent = Frame5
-TextLabel12.Size = UDim2.new(1, 0, 0, 15)
-TextLabel12.Position = UDim2.new(0, 0, 0, -16)
-TextLabel12.BackgroundTransparency = 1
-TextLabel12.Text = "RFX 🇸🇦"
-TextLabel12.TextSize = 12
-TextLabel12.Font = Enum.Font.Gotham
-TextLabel12.TextColor3 = Color3.fromRGB(220, 220, 220)
-ApplyTextStroke(TextLabel12)
-
-local ImageLabel6 = Instance.new("ImageLabel")
-ImageLabel6.Name = "Developer"
-ImageLabel6.Parent = Frame5
-ImageLabel6.Size = UDim2.new(0.85, 0, 0.85, 0)
-ImageLabel6.BackgroundTransparency = 1
-ImageLabel6.ScaleType = Enum.ScaleType.Crop
-ImageLabel6.Position = UDim2.new(0.5, 0, 0.45, 0)
-ImageLabel6.AnchorPoint = Vector2.new(0.5, 0.5)
-ImageLabel6.Image = "rbxthumb://type=Asset&w=420&h=420&id=77346579573030"
-local UICorner5 = Instance.new("UICorner")
-UICorner5.CornerRadius = UDim.new(1, 0)
-UICorner5.Parent = ImageLabel6
-local UIStrokeClone2 = UIStroke3:Clone()
-UIStrokeClone2.Transparency = 0.1
-UIStrokeClone2.Color = Color3.fromRGB(75, 0, 130)
-UIStrokeClone2.Parent = ImageLabel6
-local TextButton88 = Instance.new("TextButton")
-TextButton88.Parent = Frame5
-TextButton88.Size = UDim2.new(1, 0, 0, 12)
-TextButton88.Position = UDim2.new(0, 0, 1, -7)
-TextButton88.BackgroundTransparency = 1
-TextButton88.Text = "@3r5f"
-TextButton88.TextSize = 10
-TextButton88.Font = Enum.Font.Gotham
-TextButton88.TextColor3 = Color3.fromRGB(114, 137, 218)
-TextButton88.AutoButtonColor = false
-ApplyTextStroke(TextButton88)
-
-local TextLabel13 = Instance.new("TextLabel")
-TextLabel13.Parent = Frame5
-TextLabel13.Size = UDim2.new(1, 0, 0, 12)
-TextLabel13.Position = UDim2.new(0, 0, 1, 3)
-TextLabel13.BackgroundTransparency = 1
-TextLabel13.Text = "اونر السيرفر"
-TextLabel13.TextSize = 10
-TextLabel13.Font = Enum.Font.Gotham
-TextLabel13.TextColor3 = Color3.fromRGB(180, 180, 180)
-TextLabel13.TextXAlignment = Enum.TextXAlignment.Center
-ApplyTextStroke(TextLabel13)
-
-local conn2 = TextButton88.MouseButton1Click:Connect(function()
-    setclipboard("RFX")
-    local StarterGui2 = game:GetService("StarterGui")
-    StarterGui2:SetCore("SendNotification", {
-        Title = "System RFX",
-        Text = "تم نسخ يوزر المطور",
-        Duration = 2
-    })
-    local Sound2 = Instance.new("Sound", game.Workspace)
-    Sound2.SoundId = "rbxassetid://3398620867"
-    Sound2.Volume = 2
-    local Connect2 = Sound2.Ended:Connect(function(value)
-        Sound2:Destroy()
-    end)
-    Sound2:Play()
-end)
 
 local Frame6 = Instance.new("Frame")
 Frame6.Name = "7zen 🇸🇦_Holder"
@@ -943,7 +871,7 @@ local Logo = Instance.new("ImageLabel")
 Logo.Name = "Logo"
 Logo.Parent = MainFrame
 Logo.BackgroundTransparency = 1
-Logo.Image = "rbxthumb://type=Asset&w=420&h=420&id=122099692016968"
+Logo.Image = "rbxthumb://type=Asset&w=420&h=420&id=88196443549579"
 Logo.Size = UDim2.new(0, 103, 0, 103)
 Logo.Position = UDim2.new(0, -40, 0, -40)
 Logo.Rotation = -15
@@ -960,7 +888,7 @@ TextLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 TextLabel.BackgroundTransparency = 0.25
 TextLabel.Size = UDim2.new(1, 0, 0, 30)
 TextLabel.Font = Enum.Font.GothamBold
-TextLabel.Text = "         RFX TEAM: The Mercy Script"
+TextLabel.Text = "         7ZEN TEAM: THE MERCY SCRIPT"
 TextLabel.TextColor3 = Color3.new(1, 1, 1)
 ApplyTextStroke(TextLabel)
 
@@ -1099,8 +1027,8 @@ task.delay(1, function()
 
     pcall(function()
         StarterGui:SetCore("SendNotification", {
-            Title = "T E A M * R F X",
-            Text = "THE MERCY SCRIPT\nR F X  O N  T O P",
+            Title = "T E A M * 7 Z E N",
+            Text = "THE MERCY SCRIPT\n7 Z E N  O N  T O P",
             Duration = 5
         })
     end)
