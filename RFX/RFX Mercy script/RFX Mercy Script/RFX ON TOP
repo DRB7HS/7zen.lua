@@ -38,7 +38,7 @@ local ScreenGui = Instance.new("ScreenGui")
 ScreenGui.Name = "RFX_GUI"
 ScreenGui.ResetOnSpawn = false
 
-if syn and syn.protect_gui then
+if typeof(syn) == "table" and syn.protect_gui then
     syn.protect_gui(ScreenGui)
     ScreenGui.Parent = CoreGui
 elseif gethui then
@@ -331,13 +331,6 @@ end)
 
     TextButton.MouseButton1Click:Connect(function()
     HomeFrame.Visible = true
-
-    if GameFrame then GameFrame.Visible = false end
-    if CharacterFrame then CharacterFrame.Visible = false end
-    if TargetFrame then TargetFrame.Visible = false end
-    if AnimFrame then AnimFrame.Visible = false end
-    if MiscFrame then MiscFrame.Visible = false end
-    if NewsFrame then NewsFrame.Visible = false end
 end)
 
     local TargetPosition = UDim2.new(0.5, -250, 0.5, -160)
