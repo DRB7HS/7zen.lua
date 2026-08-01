@@ -216,6 +216,221 @@ ImageCorner.Parent = PlayerImage
 
 CreateAnimatedStroke(PlayerImage)
 
+local Frame2 = Instance.new("Frame")
+Frame2.Name = "DevsContainer"
+Frame2.Parent = HomeFrame
+Frame2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Frame2.BackgroundTransparency = 0.5
+Frame2.Position = UDim2.new(0, 20, 0, 145)
+Frame2.Size = UDim2.new(0, 340, 0, 135)
+
+local UIStroke3 = Instance.new("UIStroke")
+UIStroke3.Parent = Frame2
+UIStroke3.Color = Color3.fromRGB(255, 0, 0)
+UIStroke3.Thickness = 1.5
+UIStroke3.Transparency = 0.2
+
+local UICorner3 = Instance.new("UICorner")
+getgenv().Corner1 = UICorner3
+getgenv().Corner1.CornerRadius = UDim.new(0, 10)
+getgenv().Corner1.Parent = Frame2
+local UIStroke4 = Instance.new("UIStroke")
+getgenv().Stroke1 = UIStroke4
+getgenv().Stroke1.Color = Color3.fromRGB(255, 0, 0)
+getgenv().Stroke1.Thickness = 1.5
+getgenv().Stroke1.Transparency = 0.2
+getgenv().Stroke1.Parent = Frame2
+CreateAnimatedStroke(Frame2)
+local TextLabel6 = Instance.new("TextLabel")
+getgenv().Title1 = TextLabel6
+getgenv().Title1.Name = "Title1"
+getgenv().Title1.Parent = Frame2
+getgenv().Title1.Size = UDim2.new(1, -20, 0, 25)
+getgenv().Title1.Position = UDim2.new(0, 10, 0, 5)
+getgenv().Title1.BackgroundTransparency = 1
+getgenv().Title1.Text = "مطورين السكربت"
+getgenv().Title1.TextColor3 = Color3.fromRGB(255, 255, 255)
+getgenv().Title1.Font = Enum.Font.GothamBold
+getgenv().Title1.TextSize = 16
+getgenv().Title1.TextXAlignment = Enum.TextXAlignment.Right
+local TextLabel7 = Instance.new("TextLabel")
+getgenv().Title2 = TextLabel7
+getgenv().Title2.Name = "Title2"
+getgenv().Title2.Parent = Frame2
+getgenv().Title2.Size = UDim2.new(1, -20, 0, 25)
+getgenv().Title2.Position = UDim2.new(0, 10, 0, 5)
+getgenv().Title2.BackgroundTransparency = 1
+getgenv().Title2.Text = "XXXX"
+getgenv().Title2.TextColor3 = Color3.fromRGB(255, 255, 255)
+getgenv().Title2.Font = Enum.Font.GothamBold
+getgenv().Title2.TextSize = 16
+getgenv().Title2.TextXAlignment = Enum.TextXAlignment.Left
+local Frame3 = Instance.new("Frame")
+getgenv().DevsFrame = Frame3
+getgenv().DevsFrame.Parent = Frame2
+getgenv().DevsFrame.Size = UDim2.new(1, -20, 1, -40)
+getgenv().DevsFrame.Position = UDim2.new(0, 10, 0, 25)
+getgenv().DevsFrame.BackgroundTransparency = 1
+local UIGridLayout = Instance.new("UIGridLayout")
+getgenv().Grid = UIGridLayout
+getgenv().Grid.Parent = getgenv().DevsFrame
+getgenv().Grid.CellSize = UDim2.new(0, 70, 0, 70)
+getgenv().Grid.CellPadding = UDim2.new(0, 10, 0, 10)
+getgenv().Grid.HorizontalAlignment = Enum.HorizontalAlignment.Center
+getgenv().Grid.VerticalAlignment = Enum.VerticalAlignment.Center
+local TextLabel8 = Instance.new("TextLabel")
+getgenv().RightsLabel = TextLabel8
+getgenv().RightsLabel.Parent = Frame2
+getgenv().RightsLabel.Size = UDim2.new(1, 0, 0, 10)
+getgenv().RightsLabel.Position = UDim2.new(0, 0, 1, 1)
+getgenv().RightsLabel.BackgroundTransparency = 1
+getgenv().RightsLabel.Text = "© All rights reserved RFX"
+getgenv().RightsLabel.TextSize = 9
+getgenv().RightsLabel.Font = Enum.Font.Gotham
+getgenv().RightsLabel.TextColor3 = Color3.fromRGB(150, 150, 150)
+getgenv().RightsLabel.TextXAlignment = Enum.TextXAlignment.Left
+local TextLabel9 = Instance.new("TextLabel")
+getgenv().VersionLabel = TextLabel9
+getgenv().VersionLabel.Parent = Frame2
+getgenv().VersionLabel.Size = UDim2.new(0.9, 0, 0, 10)
+getgenv().VersionLabel.Position = UDim2.new(0, 34, 1, 1)
+getgenv().VersionLabel.BackgroundTransparency = 1
+getgenv().VersionLabel.Text = "v2.0"
+getgenv().VersionLabel.TextSize = 9
+getgenv().VersionLabel.Font = Enum.Font.Gotham
+getgenv().VersionLabel.TextColor3 = Color3.fromRGB(150, 150, 150)
+getgenv().VersionLabel.TextXAlignment = Enum.TextXAlignment.Right
+local Frame5 = Instance.new("Frame")
+Frame5.Name = "RFX 🇸🇦_Holder"
+Frame5.BackgroundTransparency = 1
+Frame5.Parent = getgenv().DevsFrame
+local TextLabel12 = Instance.new("TextLabel")
+TextLabel12.Parent = Frame5
+TextLabel12.Size = UDim2.new(1, 0, 0, 15)
+TextLabel12.Position = UDim2.new(0, 0, 0, -16)
+TextLabel12.BackgroundTransparency = 1
+TextLabel12.Text = "RFX 🇸🇦"
+TextLabel12.TextSize = 12
+TextLabel12.Font = Enum.Font.Gotham
+TextLabel12.TextColor3 = Color3.fromRGB(220, 220, 220)
+local ImageLabel6 = Instance.new("ImageLabel")
+ImageLabel6.Name = "Developer"
+ImageLabel6.Parent = Frame5
+ImageLabel6.Size = UDim2.new(0.85, 0, 0.85, 0)
+ImageLabel6.BackgroundTransparency = 1
+ImageLabel6.ScaleType = Enum.ScaleType.Crop
+ImageLabel6.Position = UDim2.new(0.5, 0, 0.45, 0)
+ImageLabel6.AnchorPoint = Vector2.new(0.5, 0.5)
+ImageLabel6.Image = "rbxthumb://type=Asset&w=420&h=420&id=77346579573030"
+local UICorner5 = Instance.new("UICorner")
+UICorner5.CornerRadius = UDim.new(1, 0)
+UICorner5.Parent = ImageLabel6
+local UIStrokeClone2 = UIStroke3:Clone()
+UIStrokeClone2.Transparency = 0.1
+UIStrokeClone2.Color = Color3.fromRGB(75, 0, 130)
+UIStrokeClone2.Parent = ImageLabel6
+local TextButton88 = Instance.new("TextButton")
+TextButton88.Parent = Frame5
+TextButton88.Size = UDim2.new(1, 0, 0, 12)
+TextButton88.Position = UDim2.new(0, 0, 1, -7)
+TextButton88.BackgroundTransparency = 1
+TextButton88.Text = "@3r5f"
+TextButton88.TextSize = 10
+TextButton88.Font = Enum.Font.Gotham
+TextButton88.TextColor3 = Color3.fromRGB(114, 137, 218)
+TextButton88.AutoButtonColor = false
+local TextLabel13 = Instance.new("TextLabel")
+TextLabel13.Parent = Frame5
+TextLabel13.Size = UDim2.new(1, 0, 0, 12)
+TextLabel13.Position = UDim2.new(0, 0, 1, 3)
+TextLabel13.BackgroundTransparency = 1
+TextLabel13.Text = "اونر السيرفر"
+TextLabel13.TextSize = 10
+TextLabel13.Font = Enum.Font.Gotham
+TextLabel13.TextColor3 = Color3.fromRGB(180, 180, 180)
+TextLabel13.TextXAlignment = Enum.TextXAlignment.Center
+local conn2 = TextButton88.MouseButton1Click:Connect(function()
+    setclipboard("RFX")
+    local StarterGui2 = game:GetService("StarterGui")
+    StarterGui2:SetCore("SendNotification", {
+        Title = "System RFX",
+        Text = "تم نسخ يوزر المطور",
+        Duration = 2
+    })
+    local Sound2 = Instance.new("Sound", game.Workspace)
+    Sound2.SoundId = "rbxassetid://3398620867"
+    Sound2.Volume = 2
+    local Connect2 = Sound2.Ended:Connect(function(value)
+        Sound2:Destroy()
+    end)
+    Sound2:Play()
+end)
+local Frame6 = Instance.new("Frame")
+Frame6.Name = "7zen 🇸🇦_Holder"
+Frame6.BackgroundTransparency = 1
+Frame6.Parent = getgenv().DevsFrame
+local TextLabel14 = Instance.new("TextLabel")
+TextLabel14.Parent = Frame6
+TextLabel14.Size = UDim2.new(1, 0, 0, 15)
+TextLabel14.Position = UDim2.new(0, 0, 0, -16)
+TextLabel14.BackgroundTransparency = 1
+TextLabel14.Text = "7zen 🇸🇦"
+TextLabel14.TextSize = 12
+TextLabel14.Font = Enum.Font.Gotham
+TextLabel14.TextColor3 = Color3.fromRGB(220, 220, 220)
+local ImageLabel7 = Instance.new("ImageLabel")
+ImageLabel7.Name = "Developer"
+ImageLabel7.Parent = Frame6
+ImageLabel7.Size = UDim2.new(0.85, 0, 0.85, 0)
+ImageLabel7.BackgroundTransparency = 1
+ImageLabel7.ScaleType = Enum.ScaleType.Crop
+ImageLabel7.Position = UDim2.new(0.5, 0, 0.45, 0)
+ImageLabel7.AnchorPoint = Vector2.new(0.5, 0.5)
+ImageLabel7.Image = "rbxthumb://type=Asset&w=420&h=420&id=110092327551686"
+local UICorner6 = Instance.new("UICorner")
+UICorner6.CornerRadius = UDim.new(1, 0)
+UICorner6.Parent = ImageLabel7
+local UIStrokeClone3 = UIStroke3:Clone()
+UIStrokeClone3.Transparency = 0.1
+UIStrokeClone3.Color = Color3.fromRGB(75, 0, 130)
+UIStrokeClone3.Parent = ImageLabel7
+local TextButton89 = Instance.new("TextButton")
+TextButton89.Parent = Frame6
+TextButton89.Size = UDim2.new(1, 0, 0, 12)
+TextButton89.Position = UDim2.new(0, 0, 1, -7)
+TextButton89.BackgroundTransparency = 1
+TextButton89.Text = "@__drb7h"
+TextButton89.TextSize = 10
+TextButton89.Font = Enum.Font.Gotham
+TextButton89.TextColor3 = Color3.fromRGB(114, 137, 218)
+TextButton89.AutoButtonColor = false
+local TextLabel15 = Instance.new("TextLabel")
+TextLabel15.Parent = Frame6
+TextLabel15.Size = UDim2.new(1, 0, 0, 12)
+TextLabel15.Position = UDim2.new(0, 0, 1, 3)
+TextLabel15.BackgroundTransparency = 1
+TextLabel15.Text = "مطور السكربت"
+TextLabel15.TextSize = 10
+TextLabel15.Font = Enum.Font.Gotham
+TextLabel15.TextColor3 = Color3.fromRGB(180, 180, 180)
+TextLabel15.TextXAlignment = Enum.TextXAlignment.Center
+local conn3 = TextButton89.MouseButton1Click:Connect(function()
+    setclipboard("7zen")
+    local StarterGui3 = game:GetService("StarterGui")
+    StarterGui3:SetCore("SendNotification", {
+      Title = "System RFX",
+        Text = "تم نسخ يوزر المطور",
+        Duration = 2
+    })
+    local Sound3 = Instance.new("Sound", game.Workspace)
+    Sound3.SoundId = "rbxassetid://3398620867"
+    Sound3.Volume = 2
+    local Connect3 = Sound3.Ended:Connect(function(value)
+        Sound3:Destroy()
+    end)
+    Sound3:Play()
+end)
+
 local Logo = Instance.new("ImageLabel")
 Logo.Name = "Logo"
 Logo.Parent = MainFrame
