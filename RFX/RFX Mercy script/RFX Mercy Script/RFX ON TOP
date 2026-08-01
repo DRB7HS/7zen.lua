@@ -107,6 +107,106 @@ MainFrame.Parent = ScreenGui
 
 CreateAnimatedStroke(MainFrame)
 
+TextLabel.Name = "TitleBarLabel"
+TextLabel.Parent = ImageLabel
+TextLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.BackgroundTransparency = 0.25
+TextLabel.Size = UDim2.new(1, 0, 0, 30)
+TextLabel.Font = Enum.Font.GothamBold
+TextLabel.Text = "        RFX TEAM: The Mercy Script"
+TextLabel.TextColor3 = Color3.new(1, 1, 1)
+
+local Gradient = Instance.new("UIGradient")
+Gradient.Parent = TextLabel
+Gradient.Rotation = 0
+Gradient.Color = ColorSequence.new{
+    ColorSequenceKeypoint.new(0.00, Color3.fromRGB(40, 0, 70)),    
+    ColorSequenceKeypoint.new(0.35, Color3.fromRGB(110, 0, 180)),  
+    ColorSequenceKeypoint.new(0.50, Color3.fromRGB(0, 0, 0)),      
+    ColorSequenceKeypoint.new(0.65, Color3.fromRGB(110, 0, 180)),  
+    ColorSequenceKeypoint.new(1.00, Color3.fromRGB(40, 0, 70))     
+}
+
+TweenService:Create(
+    Gradient,
+    TweenInfo.new(2.5, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, -1),
+    {Offset = Vector2.new(-1, 0)}
+):Play()
+
+TextLabel.TextColor3 = Color3.fromRGB(255, 0, 0)
+TextLabel.TextScaled = true
+TextLabel.TextXAlignment = Enum.TextXAlignment.Left
+getgenv().StopDrag.Name = "StopDrag"
+getgenv().StopDrag.Parent = ImageLabel
+getgenv().StopDrag.BackgroundTransparency = 1
+getgenv().StopDrag.Size = UDim2.new(0.05, 0, 0, 20)
+getgenv().StopDrag.Position = UDim2.new(0.943, 0, 0, 5)
+getgenv().StopDrag.Image = "rbxassetid://15117261700"
+getgenv().StopDrag.ImageColor3 = Color3.fromRGB(139, 0, 0)
+Frame.Name = "SectionList"
+Frame.Parent = ImageLabel
+Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BackgroundTransparency = 0.5
+Frame.Position = UDim2.new(0, 0, 0, 30)
+Frame.Size = UDim2.new(0, 105, 0, 320)
+local TextButton = Instance.new("TextButton")
+local TextButton2 = Instance.new("TextButton")
+local TextButton3 = Instance.new("TextButton")
+local TextButton4 = Instance.new("TextButton")
+local TextButton5 = Instance.new("TextButton")
+local TextButton6 = Instance.new("TextButton")
+local TextButton7 = Instance.new("TextButton")
+TextButton.Parent = Frame
+TextButton.Position = UDim2.new(0, 0, 0, 25)
+TextButton.Size = UDim2.new(0, 105, 0, 30)
+TextButton.Text = "الرئيسية | Home"
+TextButton2.Parent = Frame
+TextButton2.Position = UDim2.new(0, 0, 0, 65)
+TextButton2.Size = UDim2.new(0, 105, 0, 30)
+TextButton2.Text = "التخريب | Game "
+TextButton3.Parent = Frame
+TextButton3.Position = UDim2.new(0, 0, 0, 105)
+TextButton3.Size = UDim2.new(0, 105, 0, 30)
+TextButton3.Text = "الاعب | Character"
+TextButton4.Parent = Frame
+TextButton4.Position = UDim2.new(0, 0, 0, 145)
+TextButton4.Size = UDim2.new(0, 105, 0, 30)
+TextButton4.Text = " استهدف | Target"
+TextButton5.Parent = Frame
+TextButton5.Position = UDim2.new(0, 0, 0, 185)
+TextButton5.Size = UDim2.new(0, 105, 0, 30)
+TextButton5.Text = "انميشنات | Anims"
+TextButton6.Parent = Frame
+TextButton6.Position = UDim2.new(0, 0, 0, 225)
+TextButton6.Size = UDim2.new(0, 105, 0, 30)
+TextButton6.Text = "اخرى | Misc"
+TextButton7.Parent = Frame
+TextButton7.Position = UDim2.new(0, 0, 0, 265)
+TextButton7.Size = UDim2.new(0, 105, 0, 30)
+TextButton7.Text = "الاخبار | News"
+
+local mainButtons = {TextButton, TextButton2, TextButton3, TextButton4, TextButton5, TextButton6, TextButton7}
+local normalColor = Color3.fromRGB(80, 0, 140)
+local activeColor = Color3.fromRGB(210, 120, 255)
+
+for _, btn in ipairs(mainButtons) do
+btn.Size = UDim2.new(0, 105, 0, 28)
+btn.BackgroundColor3 = normalColor
+btn.TextColor3 = Color3.fromRGB(0, 0, 0)
+btn.TextSize = 14
+btn.Font = Enum.Font.GothamBold
+btn.TextWrapped = true
+local corner = Instance.new("UICorner")
+corner.CornerRadius = UDim.new(0, 8)
+corner.Parent = btn
+btn.MouseButton1Click:Connect(function()
+for _, otherBtn in ipairs(mainButtons) do
+otherBtn.BackgroundColor3 = normalColor
+end
+btn.BackgroundColor3 = activeColor
+end)
+end
+
 local SnowContainer = Instance.new("Frame")
 SnowContainer.Size = UDim2.new(1, 0, 1, 0)
 SnowContainer.BackgroundTransparency = 1
