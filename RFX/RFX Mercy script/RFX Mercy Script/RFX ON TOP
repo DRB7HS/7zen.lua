@@ -32,6 +32,7 @@ _G.IsOpened = true
 local TweenService = game:GetService("TweenService")
 local CoreGui = game:GetService("CoreGui")
 local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
 
 local ScreenGui = Instance.new("ScreenGui")
 ScreenGui.Name = "RFX_GUI"
@@ -270,7 +271,16 @@ pcall(function()
     })
 end)
 
-    MainFrame.Visible = false
+    TextButton.MouseButton1Click:Connect(function()
+    HomeFrame.Visible = true
+
+    if GameFrame then GameFrame.Visible = false end
+    if CharacterFrame then CharacterFrame.Visible = false end
+    if TargetFrame then TargetFrame.Visible = false end
+    if AnimFrame then AnimFrame.Visible = false end
+    if MiscFrame then MiscFrame.Visible = false end
+    if NewsFrame then NewsFrame.Visible = false end
+end)
 
     local TargetPosition = UDim2.new(0.5, -250, 0.5, -160)
     local TweenInfoData = TweenInfo.new(1, Enum.EasingStyle.Quart, Enum.EasingDirection.Out)
