@@ -124,10 +124,28 @@ Text1.BackgroundTransparency = 1
 Text1.Position = UDim2.new(0, 20, 0, 20)
 Text1.Size = UDim2.new(0, 340, 0, 35)
 Text1.Font = Enum.Font.GothamBold
-Text1.Text = "منور السكربت يا " .. LocalPlayer.DisplayName
-Text1.TextColor3 = Color3.fromRGB(255, 0, 0)
+Text1.Text = "  منور السكربت يا " .. LocalPlayer.DisplayName
+Text1.TextColor3 = Color3.fromRGB(75, 0, 130)
 Text1.TextSize = 22
 Text1.TextXAlignment = Enum.TextXAlignment.Right
+Text1.TextColor3 = Color3.new(1, 1, 1)
+
+local Gradient1 = Instance.new("UIGradient")
+Gradient1.Parent = Text1
+Gradient1.Rotation = 0
+Gradient1.Color = ColorSequence.new{
+    ColorSequenceKeypoint.new(0.00, Color3.fromRGB(40, 0, 70)),    
+    ColorSequenceKeypoint.new(0.35, Color3.fromRGB(110, 0, 180)),  
+    ColorSequenceKeypoint.new(0.50, Color3.fromRGB(0, 0, 0)),      
+    ColorSequenceKeypoint.new(0.65, Color3.fromRGB(110, 0, 180)),  
+    ColorSequenceKeypoint.new(1.00, Color3.fromRGB(40, 0, 70))     
+}
+
+TweenService:Create(
+    Gradient1,
+    TweenInfo.new(2.5, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, -1),
+    {Offset = Vector2.new(-1, 0)}
+):Play()
 
 local Text2 = Instance.new("TextLabel")
 Text2.Name = "HideLabel"
@@ -136,10 +154,25 @@ Text2.BackgroundTransparency = 1
 Text2.Position = UDim2.new(0, 20, 0, 60)
 Text2.Size = UDim2.new(0, 340, 0, 35)
 Text2.Font = Enum.Font.GothamBold
-Text2.Text = "اضغط [F] لأخفاء الواجهة"
-Text2.TextColor3 = Color3.fromRGB(255, 0, 0)
+Text2.Text = "  اضغط [F] لأخفاء الواجهة"
+Text2.TextColor3 = Color3.fromRGB(75, 0, 130)
 Text2.TextSize = 22
 Text2.TextXAlignment = Enum.TextXAlignment.Right
+Text2.TextColor3 = Color3.new(1, 1, 1)
+
+local Gradient2 = Instance.new("UIGradient")
+Gradient2.Parent = Text2
+Gradient2.Rotation = 0
+Gradient2.Color = ColorSequence.new{
+    ColorSequenceKeypoint.new(0.00, Color3.fromRGB(40, 0, 70)),
+    ColorSequenceKeypoint.new(0.35, Color3.fromRGB(110, 0, 180)),
+    ColorSequenceKeypoint.new(0.50, Color3.fromRGB(0, 0, 0)),
+    ColorSequenceKeypoint.new(0.65, Color3.fromRGB(110, 0, 180)),
+    ColorSequenceKeypoint.new(1.00, Color3.fromRGB(40, 0, 70))
+}
+
+Text2.TextStrokeTransparency = 0
+Text2.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
 
 local Text3 = Instance.new("TextLabel")
 Text3.Name = "StatusLabel"
@@ -148,10 +181,25 @@ Text3.BackgroundTransparency = 1
 Text3.Position = UDim2.new(0, 20, 0, 100)
 Text3.Size = UDim2.new(0, 340, 0, 35)
 Text3.Font = Enum.Font.GothamBold
-Text3.Text = "حالة السكربت : شغال"
-Text3.TextColor3 = Color3.fromRGB(255, 0, 0)
+Text3.Text = "  حالة السكربت : شغال"
+Text3.TextColor3 = Color3.fromRGB(75, 0, 130)
 Text3.TextSize = 22
 Text3.TextXAlignment = Enum.TextXAlignment.Right
+Text3.TextColor3 = Color3.new(1, 1, 1)
+
+local Gradient3 = Instance.new("UIGradient")
+Gradient3.Parent = Text3
+Gradient3.Rotation = 0
+Gradient3.Color = ColorSequence.new{
+    ColorSequenceKeypoint.new(0.00, Color3.fromRGB(40, 0, 70)),
+    ColorSequenceKeypoint.new(0.35, Color3.fromRGB(110, 0, 180)),
+    ColorSequenceKeypoint.new(0.50, Color3.fromRGB(0, 0, 0)),
+    ColorSequenceKeypoint.new(0.65, Color3.fromRGB(110, 0, 180)),
+    ColorSequenceKeypoint.new(1.00, Color3.fromRGB(40, 0, 70))
+}
+
+Text3.TextStrokeTransparency = 0
+Text3.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
 
 local PlayerImage = Instance.new("ImageLabel")
 PlayerImage.Name = "PlayerImage"
@@ -165,6 +213,8 @@ PlayerImage.Image = "rbxthumb://type=AvatarHeadShot&id=" .. userId .. "&w=150&h=
 local ImageCorner = Instance.new("UICorner")
 ImageCorner.CornerRadius = UDim.new(0, 12)
 ImageCorner.Parent = PlayerImage
+
+CreateAnimatedStroke(PlayerImage)
 
 local Logo = Instance.new("ImageLabel")
 Logo.Name = "Logo"
@@ -190,10 +240,10 @@ TextLabel.Font = Enum.Font.GothamBold
 TextLabel.Text = "         RFX TEAM: The Mercy Script"
 TextLabel.TextColor3 = Color3.new(1, 1, 1)
 
-local Gradient = Instance.new("UIGradient")
-Gradient.Parent = TextLabel
-Gradient.Rotation = 0
-Gradient.Color = ColorSequence.new{
+local GradientTitle = Instance.new("UIGradient")
+GradientTitle.Parent = TextLabel
+GradientTitle.Rotation = 0
+GradientTitle.Color = ColorSequence.new{
     ColorSequenceKeypoint.new(0.00, Color3.fromRGB(40, 0, 70)),    
     ColorSequenceKeypoint.new(0.35, Color3.fromRGB(110, 0, 180)),  
     ColorSequenceKeypoint.new(0.50, Color3.fromRGB(0, 0, 0)),      
@@ -202,7 +252,7 @@ Gradient.Color = ColorSequence.new{
 }
 
 TweenService:Create(
-    Gradient,
+    GradientTitle,
     TweenInfo.new(2.5, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, -1),
     {Offset = Vector2.new(-1, 0)}
 ):Play()
@@ -312,26 +362,27 @@ task.spawn(function()
     end
 end)
 
-    task.delay(1, function()
+task.delay(1, function()
     IntroFrame:Destroy()
+    MainFrame.Visible = true
 
-local NotifySound = Instance.new("Sound")
-NotifySound.SoundId = "rbxassetid://3398620867"
-NotifySound.Volume = 1
-NotifySound.Parent = SoundService
-NotifySound:Play()
+    local NotifySound = Instance.new("Sound")
+    NotifySound.SoundId = "rbxassetid://3398620867"
+    NotifySound.Volume = 1
+    NotifySound.Parent = SoundService
+    NotifySound:Play()
 
-pcall(function()
-    StarterGui:SetCore("SendNotification", {
-        Title = "T E A M * R F X",
-        Text = "THE MERCY SCRIPT\nR F X  O N  T O P",
-        Duration = 5
-    })
-end)
+    pcall(function()
+        StarterGui:SetCore("SendNotification", {
+            Title = "T E A M * R F X",
+            Text = "THE MERCY SCRIPT\nR F X  O N  T O P",
+            Duration = 5
+        })
+    end)
 
     TextButton.MouseButton1Click:Connect(function()
-    HomeFrame.Visible = true
-end)
+        HomeFrame.Visible = true
+    end)
 
     local TargetPosition = UDim2.new(0.5, -250, 0.5, -160)
     local TweenInfoData = TweenInfo.new(1, Enum.EasingStyle.Quart, Enum.EasingDirection.Out)
