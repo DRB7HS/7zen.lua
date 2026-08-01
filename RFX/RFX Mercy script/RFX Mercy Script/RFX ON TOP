@@ -106,7 +106,7 @@ local MainFrame = Instance.new("ImageLabel")
 MainFrame.Name = "MainFrame"
 MainFrame.Size = UDim2.new(0, 500, 0, 320)
 MainFrame.Position = UDim2.new(0, -500, 0, -320)
-MainFrame.Image = "rbxthumb://type=Asset&w=420&h=420&id=77346579573030"
+MainFrame.Image = "rbxthumb://type=Asset&w=420&h=420&id=90867274200257"
 MainFrame.BackgroundColor3 = Color3.fromRGB(15, 15, 20)
 MainFrame.BorderSizePixel = 0
 MainFrame.ClipsDescendants = true
